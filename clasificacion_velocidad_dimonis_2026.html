@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clasificación Campeonato de Velocidad 2026 — Dimonis Slot Club</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #ff5722;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px 60px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  header .club {
+    font-size: 15px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  header h1 {
+    margin: 8px 0 4px;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .legend {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1500px;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 9px 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  thead th {
+    position: sticky;
+    top: 0;
+    background: #1c2330;
+    z-index: 2;
+    vertical-align: bottom;
+  }
+  th.race span { display: block; line-height: 1.25; }
+  th.race .rnum { font-size: 15px; font-weight: 800; color: var(--accent); }
+  th.race .rdate { font-size: 11px; color: var(--muted); }
+  th.race .rcat { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  th.driver-col, td.driver {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    background: inherit;
+    z-index: 1;
+    font-weight: 700;
+    min-width: 140px;
+  }
+  thead th.driver-col { z-index: 3; background: #1c2330; }
+  td.pos { font-weight: 800; min-width: 46px; }
+  tr.top1 td { background: rgba(255,215,0,.10); }
+  tr.top2 td { background: rgba(192,192,192,.08); }
+  tr.top3 td { background: rgba(205,127,50,.08); }
+  tr.top1 td.driver { box-shadow: inset 4px 0 0 var(--gold); }
+  tr.top2 td.driver { box-shadow: inset 4px 0 0 var(--silver); }
+  tr.top3 td.driver { box-shadow: inset 4px 0 0 var(--bronze); }
+  td.pts { min-width: 34px; }
+  td.total { font-weight: 800; color: var(--accent); font-size: 15px; }
+  td.disputed { color: var(--muted); }
+  td.avg { color: var(--muted); font-size: 13px; }
+  .dash { color: #3a424d; }
+  tbody tr:hover td { background: rgba(255,87,34,.10); }
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="club">🏁 Dimonis Slot Club 🏁</div>
+  <h1>Clasificación Campeonato de Velocidad 2026</h1>
+  <p>Temporada 17-01-26 → 12-09-26 · 17 carreras disputadas · Vuelta rápida +1 punto</p>
+</header>
+<div class="legend">Desliza horizontalmente para ver todas las carreras →</div>
+<div class="wrapper">
+<table>
+  <thead>
+    <tr>
+      <th>Puesto</th>
+      <th class="driver-col">Piloto</th>
+      <th class="race" title="GTS 11b — 17-01-26"><span class="rnum">1º</span><span class="rdate">17-01-26</span><span class="rcat">GTS 11b</span></th><th class="race" title="GTS — 31-01-26"><span class="rnum">2º</span><span class="rdate">31-01-26</span><span class="rcat">GTS</span></th><th class="race" title="Grupo 5 — 21-02-26"><span class="rnum">3º</span><span class="rdate">21-02-26</span><span class="rcat">Grupo 5</span></th><th class="race" title="Sprint Hypercar — 27-02-26"><span class="rnum">4º</span><span class="rdate">27-02-26</span><span class="rcat">Sprint Hypercar</span></th><th class="race" title="Grupo C — 07-03-26"><span class="rnum">5º</span><span class="rdate">07-03-26</span><span class="rcat">Grupo C</span></th><th class="race" title="GTS Magnéticos — 28-03-26"><span class="rnum">6º</span><span class="rdate">28-03-26</span><span class="rcat">GTS Magnéticos</span></th><th class="race" title="GTS 11b — 04-04-26"><span class="rnum">7º</span><span class="rdate">04-04-26</span><span class="rcat">GTS 11b</span></th><th class="race" title="GTS Magnéticos — 11-04-26"><span class="rnum">8º</span><span class="rdate">11-04-26</span><span class="rcat">GTS Magnéticos</span></th><th class="race" title="Grupo 5 — 02-05-26"><span class="rnum">9º</span><span class="rdate">02-05-26</span><span class="rcat">Grupo 5</span></th><th class="race" title="Sprint Hypercar — 08-05-26"><span class="rnum">10º</span><span class="rdate">08-05-26</span><span class="rcat">Sprint Hypercar</span></th><th class="race" title="Grupo C — 23-05-26"><span class="rnum">11º</span><span class="rdate">23-05-26</span><span class="rcat">Grupo C</span></th><th class="race" title="Fórmula 1 — 30-05-26"><span class="rnum">12º</span><span class="rdate">30-05-26</span><span class="rcat">Fórmula 1</span></th><th class="race" title="GTS 11b — 20-06-26"><span class="rnum">13º</span><span class="rdate">20-06-26</span><span class="rcat">GTS 11b</span></th><th class="race" title="GTS — 27-06-26"><span class="rnum">14º</span><span class="rdate">27-06-26</span><span class="rcat">GTS</span></th><th class="race" title="Hipercoches — 28-08-26"><span class="rnum">15º</span><span class="rdate">28-08-26</span><span class="rcat">Hipercoches</span></th><th class="race" title="Grupo 5 — 05-09-26"><span class="rnum">16º</span><span class="rdate">05-09-26</span><span class="rcat">Grupo 5</span></th><th class="race" title="Grupo C — 12-09-26"><span class="rnum">17º</span><span class="rdate">12-09-26</span><span class="rcat">Grupo C</span></th>
+      <th>Carreras</th>
+      <th>Total</th>
+      <th>Media</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="top1">
+<td class="pos">🥇</td>
+<td class="driver">Adan</td>
+<td class="pts">12</td><td class="pts">12</td><td class="pts"><span class="dash">—</span></td><td class="pts">16</td><td class="pts">9</td><td class="pts">14</td><td class="pts">12</td><td class="pts">13</td><td class="pts">17</td><td class="pts">12</td><td class="pts">12</td><td class="pts">16</td><td class="pts">6</td><td class="pts">17</td><td class="pts">17</td><td class="pts">17</td><td class="pts">16</td>
+<td class="disputed">16</td>
+<td class="total">218</td>
+<td class="avg">13.6</td>
+</tr>
+<tr class="top2">
+<td class="pos">🥈</td>
+<td class="driver">Manolo</td>
+<td class="pts">16</td><td class="pts">11</td><td class="pts">16</td><td class="pts">13</td><td class="pts">15</td><td class="pts">8</td><td class="pts">12</td><td class="pts">16</td><td class="pts">12</td><td class="pts">16</td><td class="pts">10</td><td class="pts">8</td><td class="pts">16</td><td class="pts">10</td><td class="pts">12</td><td class="pts">12</td><td class="pts">10</td>
+<td class="disputed">17</td>
+<td class="total">213</td>
+<td class="avg">12.5</td>
+</tr>
+<tr class="top3">
+<td class="pos">🥉</td>
+<td class="driver">Toni Felanitx</td>
+<td class="pts">2</td><td class="pts">16</td><td class="pts">9</td><td class="pts">8</td><td class="pts">12</td><td class="pts">15</td><td class="pts">6</td><td class="pts">6</td><td class="pts">10</td><td class="pts">11</td><td class="pts">17</td><td class="pts">7</td><td class="pts">12</td><td class="pts">12</td><td class="pts">10</td><td class="pts">8</td><td class="pts">13</td>
+<td class="disputed">17</td>
+<td class="total">174</td>
+<td class="avg">10.2</td>
+</tr>
+<tr class="even">
+<td class="pos">4º</td>
+<td class="driver">Adri</td>
+<td class="pts">10</td><td class="pts">4</td><td class="pts">12</td><td class="pts">10</td><td class="pts">1</td><td class="pts">7</td><td class="pts">15</td><td class="pts">1</td><td class="pts">6</td><td class="pts">7</td><td class="pts">6</td><td class="pts">10</td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts">6</td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">15</td>
+<td class="total">107</td>
+<td class="avg">7.1</td>
+</tr>
+<tr class="odd">
+<td class="pos">5º</td>
+<td class="driver">Dani García</td>
+<td class="pts">1</td><td class="pts">3</td><td class="pts"><span class="dash">—</span></td><td class="pts">7</td><td class="pts">6</td><td class="pts">6</td><td class="pts">7</td><td class="pts">4</td><td class="pts">4</td><td class="pts">8</td><td class="pts">7</td><td class="pts">7</td><td class="pts">7</td><td class="pts">7</td><td class="pts">7</td><td class="pts">7</td><td class="pts">7</td>
+<td class="disputed">16</td>
+<td class="total">95</td>
+<td class="avg">5.9</td>
+</tr>
+<tr class="even">
+<td class="pos">6º</td>
+<td class="driver">Toni Dimoni</td>
+<td class="pts">4</td><td class="pts">2</td><td class="pts">6</td><td class="pts">6</td><td class="pts"><span class="dash">—</span></td><td class="pts">10</td><td class="pts">4</td><td class="pts">3</td><td class="pts">3</td><td class="pts">6</td><td class="pts">1</td><td class="pts">3</td><td class="pts">4</td><td class="pts">5</td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts">6</td>
+<td class="disputed">15</td>
+<td class="total">71</td>
+<td class="avg">4.7</td>
+</tr>
+<tr class="odd">
+<td class="pos">7º</td>
+<td class="driver">Toniet</td>
+<td class="pts">1</td><td class="pts">1</td><td class="pts">4</td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td><td class="pts">3</td><td class="pts">5</td><td class="pts">10</td><td class="pts">7</td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts">12</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td><td class="pts">8</td>
+<td class="disputed">12</td>
+<td class="total">64</td>
+<td class="avg">5.3</td>
+</tr>
+<tr class="even">
+<td class="pos">8º</td>
+<td class="driver">Maverick</td>
+<td class="pts">7</td><td class="pts">6</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">8</td><td class="pts">5</td><td class="pts">8</td><td class="pts">1</td><td class="pts">5</td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td><td class="pts">2</td><td class="pts">6</td><td class="pts">6</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td>
+<td class="disputed">12</td>
+<td class="total">63</td>
+<td class="avg">5.2</td>
+</tr>
+<tr class="odd">
+<td class="pos">9º</td>
+<td class="driver">Joan Colom</td>
+<td class="pts">7</td><td class="pts">7</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts">10</td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">8</td>
+<td class="total">51</td>
+<td class="avg">6.4</td>
+</tr>
+<tr class="even">
+<td class="pos">10º</td>
+<td class="driver">Sonio</td>
+<td class="pts">8</td><td class="pts">5</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts">8</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">10</td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">5</td>
+<td class="total">39</td>
+<td class="avg">7.8</td>
+</tr>
+<tr class="odd">
+<td class="pos">11º</td>
+<td class="driver">Víctor</td>
+<td class="pts">1</td><td class="pts">8</td><td class="pts">10</td><td class="pts"><span class="dash">—</span></td><td class="pts">10</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">7</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">5</td>
+<td class="total">36</td>
+<td class="avg">7.2</td>
+</tr>
+<tr class="even">
+<td class="pos">12º</td>
+<td class="driver">Juanito</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">7</td><td class="pts">3</td><td class="pts">3</td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">2</td><td class="pts">2</td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">2</td><td class="pts">6</td><td class="pts">2</td>
+<td class="disputed">11</td>
+<td class="total">33</td>
+<td class="avg">3.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">13º</td>
+<td class="driver">Torpedo</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">5</td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">9</td>
+<td class="total">24</td>
+<td class="avg">2.7</td>
+</tr>
+<tr class="even">
+<td class="pos">14º</td>
+<td class="driver">Pedro Mulet</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">2</td><td class="pts">1</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">3</td><td class="pts">2</td><td class="pts">1</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">3</td><td class="pts">5</td><td class="pts">3</td>
+<td class="disputed">11</td>
+<td class="total">23</td>
+<td class="avg">2.1</td>
+</tr>
+<tr class="odd">
+<td class="pos">15º</td>
+<td class="driver">Campanilla</td>
+<td class="pts">3</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">2</td><td class="pts">2</td><td class="pts">3</td><td class="pts">5</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">3</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td>
+<td class="disputed">8</td>
+<td class="total">23</td>
+<td class="avg">2.9</td>
+</tr>
+<tr class="even">
+<td class="pos">16º</td>
+<td class="driver">Laurent</td>
+<td class="pts">1</td><td class="pts">1</td><td class="pts">2</td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">2</td><td class="pts">1</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">2</td><td class="pts">3</td><td class="pts">1</td><td class="pts">2</td><td class="pts">1</td>
+<td class="disputed">16</td>
+<td class="total">22</td>
+<td class="avg">1.4</td>
+</tr>
+<tr class="odd">
+<td class="pos">17º</td>
+<td class="driver">Chema</td>
+<td class="pts">5</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td><td class="pts">4</td><td class="pts">2</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">3</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">6</td>
+<td class="total">19</td>
+<td class="avg">3.2</td>
+</tr>
+<tr class="even">
+<td class="pos">18º</td>
+<td class="driver">Mateu</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">3</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">1</td><td class="pts">2</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">3</td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">10</td>
+<td class="total">15</td>
+<td class="avg">1.5</td>
+</tr>
+<tr class="odd">
+<td class="pos">19º</td>
+<td class="driver">Markus</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">4</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td>
+<td class="disputed">5</td>
+<td class="total">8</td>
+<td class="avg">1.6</td>
+</tr>
+<tr class="even">
+<td class="pos">20º</td>
+<td class="driver">Toni Bibiloni</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">5</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">6</td>
+<td class="avg">3.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">21º</td>
+<td class="driver">Michel</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">2</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td>
+<td class="disputed">5</td>
+<td class="total">6</td>
+<td class="avg">1.2</td>
+</tr>
+<tr class="even">
+<td class="pos">22º</td>
+<td class="driver">Abril</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">2</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">23º</td>
+<td class="driver">Felip</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">2</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="even">
+<td class="pos">24º</td>
+<td class="driver">Martí</td>
+<td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">2</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">25º</td>
+<td class="driver">Jaume</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">2</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="even">
+<td class="pos">26º</td>
+<td class="driver">Pep</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">2</td>
+<td class="total">2</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">27º</td>
+<td class="driver">Jandro</td>
+<td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="even">
+<td class="pos">28º</td>
+<td class="driver">José Antonio</td>
+<td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">29º</td>
+<td class="driver">José Juan</td>
+<td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="even">
+<td class="pos">30º</td>
+<td class="driver">Juan Illencs</td>
+<td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="odd">
+<td class="pos">31º</td>
+<td class="driver">Xim</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+<tr class="even">
+<td class="pos">32º</td>
+<td class="driver">Toni Bar Ave</td>
+<td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts">1</td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td><td class="pts"><span class="dash">—</span></td>
+<td class="disputed">1</td>
+<td class="total">1</td>
+<td class="avg">1.0</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+<footer>Generado el 15-09-2026 · Clasificación oficial Dimonis · Campeonato de Velocidad 2026</footer>
+</body>
+</html>
